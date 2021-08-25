@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mybatis的映射关系配置文件-->
+<mapper namespace="cn.king.demo01.mapper.UserMapper">
+
+    <sql id="USER_BASE_FIELD">
+        id,`name`,age,email
+    </sql>
+
+    <select id="getList" resultType="cn.king.demo01.model.User">
+        select <include refid="USER_BASE_FIELD"/> from tb_user
+    </select>
+
+</mapper>
